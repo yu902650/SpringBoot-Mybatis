@@ -88,7 +88,7 @@
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.4.4" level="project" />
     <orderEntry type="library" name="Maven: tk.mybatis:mapper:3.4.0" level="project" />
     <orderEntry type="library" name="Maven: com.github.pagehelper:pagehelper:4.2.1" level="project" />
-    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.22" level="project" />
+    <orderEntry type="library" name="Maven: com.alibaba:fastjson:1.2.31" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid-spring-boot-starter:1.1.2" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.1.2" level="project" />
     <orderEntry type="module-library">
