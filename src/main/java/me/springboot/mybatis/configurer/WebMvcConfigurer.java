@@ -1,10 +1,10 @@
-/**     
- * @Title: WebMvcConfigurer.java   
- * @Package me.springboot.mybatis.configurer   
+/**
+ * @Title: WebMvcConfigurer.java
+ * @Package me.springboot.mybatis.configurer
  * @Description: TODO
- * @author weiwei 
- * @date 2017年8月10日 下午4:05:00   
- * @version V1.0     
+ * @author weiwei
+ * @date 2017年8月10日 下午4:05:00
+ * @version V1.0
  */
 package me.springboot.mybatis.configurer;
 
@@ -35,6 +35,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -44,11 +45,9 @@ import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4;
 
 /**
- * @ClassName: WebMvcConfigurer
- * @Description: TODO
- * @author weiwei
- * @date 2017年8月10日 下午4:05:00
- * 
+ * @author bo bo
+ * @date 2019/8/12 14:22
+ * @desc
  */
 @Configuration
 public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
@@ -207,4 +206,20 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
 		}
 		return ip;
 	}
+
+	/**
+	 * SpringBoot自动配置本身并不会把/swagger-ui.html这个路径映射到对应的目录META-INF/resources/下面
+	 * SwaggerUI不显示, 需要配置此类
+	 * @param registry
+	 */
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+
+		registry.addResourceHandler("swagger-ui.html")
+				.addResourceLocations("classpath:/META-INF/resources/");
+
+		registry.addResourceHandler("/webjars/**")
+				.addResourceLocations("classpath:/META-INF/resources/webjars/");
+	}
+
 }

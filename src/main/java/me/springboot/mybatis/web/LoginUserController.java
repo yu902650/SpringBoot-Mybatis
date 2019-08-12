@@ -1,30 +1,38 @@
 package me.springboot.mybatis.web;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import me.springboot.mybatis.core.RetResponse;
 import me.springboot.mybatis.core.RetResult;
 import me.springboot.mybatis.model.LoginUser;
 import me.springboot.mybatis.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.Collections;
 
 /**
  * @author bo bo
  * @date 2019/8/12 13:30
  * @desc
  */
+@Api(value="/login", tags="login模块")
 @RestController
 @RequestMapping("/login")
 public class LoginUserController {
 
-    @Resource
+    @Autowired
     private LoginService loginService;
 
-    @RequestMapping("/a")
+    /**
+     *
+     * @return
+     */
+    @ApiOperation(value = "测试a",notes = "不需要传参只是测试接口是否可用")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Integer", paramType = "path")
+    @RequestMapping(value = "/a",method = RequestMethod.GET)
     public String a(){
         return "welcome to west world!";
     }
