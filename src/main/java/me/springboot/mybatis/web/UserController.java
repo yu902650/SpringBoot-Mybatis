@@ -1,17 +1,19 @@
 /**
-* @Title: ${modelNameUpperCamel}Controller.java
-* @Package ${basePackageController}
+* @Title: UserController.java
+* @Package me.springboot.mybatis.web
 * @Description: TODO
-* @author ${author}
-* @date ${date}
+* @author bobo
+* @date 2019/08/12
 * @version V1.0
 */
-package ${basePackageController};
+package me.springboot.mybatis.web;
 
 //import me.springboot.mybatis.core.String;
 //import me.springboot.mybatis.core.RetResponse;
-import ${basePackageModel}.${modelNameUpperCamel};
-import ${basePackageService}.${modelNameUpperCamel}Service;
+import me.springboot.mybatis.core.req.Constants;
+import me.springboot.mybatis.core.req.Result;
+import me.springboot.mybatis.model.User;
+import me.springboot.mybatis.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,39 +27,39 @@ import java.util.List;
 import java.util.Map;
 
 /**
-* @ClassName: ${modelNameUpperCamel}Controller
+* @ClassName: UserController
 * @Description: TODO
-* @author ${author}
-* @date ${date}
+* @author bobo
+* @date 2019/08/12
 */
 @RestController
-@RequestMapping("${baseRequestMapping}")
-public class ${modelNameUpperCamel}Controller {
+@RequestMapping("/user")
+public class UserController {
 
     @Resource
-    private ${modelNameUpperCamel}Service ${modelNameLowerCamel}Service;
+    private UserService userService;
 
     /**
 	* @Title: add
 	* @Description: 添加
-	* @param ${modelNameLowerCamel}
+	* @param user
 	* @Reutrn
 	*/
     @PostMapping("/add")
-    public String add (${modelNameUpperCamel} ${modelNameLowerCamel}) {
-        ${modelNameLowerCamel}Service.save(${modelNameLowerCamel});
+    public String add (User user) {
+        userService.save(user);
 		return Result.ok(Constants.SUCCESS,"","add success");
     }
 
     /**
 	* @Title: add2
 	* @Description: 传入参数为JSON格式
-	* @param ${modelNameLowerCamel}
+	* @param user
 	* @Reutrn
 	*/
 	@PostMapping("/add2")
-	public String add2(@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
-		${modelNameLowerCamel}Service.save(${modelNameLowerCamel});
+	public String add2(@RequestBody User user) {
+		userService.save(user);
 		return Result.ok(Constants.SUCCESS,"","add2 success");
 	}
 
@@ -69,31 +71,31 @@ public class ${modelNameUpperCamel}Controller {
 	*/
     @PostMapping("/delete")
     public String deleteById (@RequestParam Integer id) {
-        ${modelNameLowerCamel}Service.deleteById(id);
+        userService.deleteById(id);
         return Result.ok(Constants.SUCCESS,"","del success");
     }
 
     /**
 	* @Title: update
 	* @Description: 更新
-	* @param ${modelNameLowerCamel}
+	* @param user
 	* @Reutrn
 	*/
     @PostMapping("/update")
-    public String update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
-        ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
+    public String update(User user) {
+        userService.update(user);
 		return Result.ok(Constants.SUCCESS,"","update success");
     }
 
     /**
 	* @Title: update
 	* @Description: 更新(传入参数为JSON格式)
-	* @param ${modelNameLowerCamel}
+	* @param user
 	* @Reutrn
 	*/
     @PostMapping("/update2")
-    public String update2 (@RequestBody ${modelNameUpperCamel} ${modelNameLowerCamel}) {
-        ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
+    public String update2 (@RequestBody User user) {
+        userService.update(user);
 		return Result.ok(Constants.SUCCESS,"","update success");
     }
 
@@ -104,9 +106,9 @@ public class ${modelNameUpperCamel}Controller {
 	* @Reutrn
 	*/
     @PostMapping("/detail")
-    public String detail${modelNameUpperCamel} (@RequestParam Integer id) {
-        ${modelNameUpperCamel} ${modelNameLowerCamel} = ${modelNameLowerCamel}Service.findById(id);
-		if(${modelNameLowerCamel}!=null){
+    public String detailUser (@RequestParam Integer id) {
+        User user = userService.findById(id);
+		if(user!=null){
 			return Result.ok(Constants.SUCCESS,"","detail success");
 		}else{
 			return Result.error(Constants.UNKNOW_ERROR,"","detail fail");
@@ -120,10 +122,10 @@ public class ${modelNameUpperCamel}Controller {
 	* @Reutrn
 	*/
 	@PostMapping("/detail2")
-	public String detail${modelNameUpperCamel} (@RequestBody Map<String, Object> reqMap) {
+	public String detailUser (@RequestBody Map<String, Object> reqMap) {
 		Integer id = Integer.valueOf(reqMap.get("id").toString());
-		${modelNameUpperCamel} ${modelNameLowerCamel} = ${modelNameLowerCamel}Service.findById(id);
-		if(${modelNameLowerCamel}!=null){
+		User user = userService.findById(id);
+		if(user!=null){
 			return Result.ok(Constants.SUCCESS,"","detail success");
 		}else{
 			return Result.error(Constants.UNKNOW_ERROR,"","detail fail");
@@ -138,10 +140,10 @@ public class ${modelNameUpperCamel}Controller {
 	* @Reutrn
 	*/
     @PostMapping("/list")
-    public String PageInfo${modelNameUpperCamel}list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
+    public String PageInfoUserlist(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
-        List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.findAll();
-        PageInfo<${modelNameUpperCamel}> pageInfo = new PageInfo<${modelNameUpperCamel}>(list);
+        List<User> list = userService.findAll();
+        PageInfo<User> pageInfo = new PageInfo<User>(list);
 		return Result.ok(Constants.SUCCESS,"",pageInfo);
     }
 }
