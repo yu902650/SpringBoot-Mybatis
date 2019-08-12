@@ -13,3 +13,8 @@
 
 ## 项目端口,我给指定的默认 
     server.port=8999
+
+## 分支介绍:
+    1.master
+    2.swagger master + swagger
+    3.按自己项目中来生成代码
