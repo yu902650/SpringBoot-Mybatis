@@ -11,6 +11,11 @@
 *   对开发环境配置文件application-dev.properties进行配置，启动项目。
 #### PS：本案例中已有t_user表的案例，若不需要可以删除dao,model,service,web以及resource下的mapper目录!
 
+<<<<<<< HEAD
 ## 集成了swagger-ui
 
 *  直接运行项目即可
+=======
+## 项目端口,我给指定的默认 
+    server.port=8999
+>>>>>>> de7da596aa570b3cf9f489e87f13d85c9f4fa380
