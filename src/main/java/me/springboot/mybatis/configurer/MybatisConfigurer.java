@@ -1,11 +1,3 @@
-/**     
- * @Title: MybatisConfigurer.java   
- * @Package me.springboot.mybatis.configurer   
- * @Description: TODO
- * @author weiwei 
- * @date 2017年8月10日 下午4:03:46   
- * @version V1.0     
- */
 package me.springboot.mybatis.configurer;
 
 import java.util.Properties;
@@ -27,11 +19,9 @@ import tk.mybatis.spring.mapper.MapperScannerConfigurer;
 import com.github.pagehelper.PageHelper;
 
 /**
- * @ClassName: MybatisConfigurer
- * @Description: Mybatis翻页插件配置和XML文件配置等
- * @author weiwei
- * @date 2017年8月10日 下午4:03:46
- * 
+ * @author bo bo
+ * @date 2019/8/12 14:22
+ * @desc Mybatis翻页插件配置和XML文件配置等
  */
 @Configuration
 public class MybatisConfigurer {

@@ -1,11 +1,3 @@
-/**     
- * @Title: RetResult.java   
- * @Package me.springboot.mybatis.core   
- * @Description: TODO
- * @author weiwei 
- * @date 2017年8月10日 下午4:09:49   
- * @version V1.0     
- */
 package me.springboot.mybatis.core;
 
 import java.io.Serializable;
@@ -15,9 +7,9 @@ import com.alibaba.fastjson.JSON;
 /**
  * @ClassName: RetResult
  * @Description: TODO
- * @author weiwei
- * @date 2017年8月10日 下午4:09:49
- * 
+ * @author bo bo
+ * @date 2019年8月10日 下午4:09:49
+ *
  */
 public class RetResult<T> implements Serializable {
 

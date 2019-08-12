@@ -1,11 +1,3 @@
-/**
- * @Title: WebMvcConfigurer.java
- * @Package me.springboot.mybatis.configurer
- * @Description: TODO
- * @author weiwei
- * @date 2017年8月10日 下午4:05:00
- * @version V1.0
- */
 package me.springboot.mybatis.configurer;
 
 import java.io.IOException;

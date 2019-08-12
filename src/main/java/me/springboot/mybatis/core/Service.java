@@ -1,11 +1,3 @@
-/**     
- * @Title: Service.java   
- * @Package me.springboot.mybatis.core   
- * @Description: TODO
- * @author weiwei 
- * @date 2017年8月10日 下午4:12:23   
- * @version V1.0     
- */
 package me.springboot.mybatis.core;
 
 import java.util.List;
@@ -17,9 +9,9 @@ import tk.mybatis.mapper.entity.Condition;
 /**
  * @ClassName: Service
  * @Description: Service层基础接口，其他Service接口请继承该接口
- * @author weiwei
- * @date 2017年8月10日 下午4:12:23
- * 
+ * @author bo bo
+ * @date 2019年8月10日 下午4:12:23
+ *
  */
 public interface Service<T> {
 
@@ -80,7 +72,7 @@ public interface Service<T> {
 	 * @Reutrn T
 	 */
 	T findBy(String fieldName, Object value) throws TooManyResultsException;
-	
+
 	/**
 	 * @Title: findListBy
 	 * @Description: 通过Model中某个成员变量名称（非数据表中column的名称）查找

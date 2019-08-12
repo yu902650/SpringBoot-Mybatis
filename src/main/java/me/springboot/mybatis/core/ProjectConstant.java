@@ -1,19 +1,11 @@
-/**     
- * @Title: ProjectConstant.java   
- * @Package me.springboot.mybatis.core   
- * @Description: TODO
- * @author weiwei 
- * @date 2017年8月10日 下午4:07:14   
- * @version V1.0     
- */
 package me.springboot.mybatis.core;
 
 /**
  * @ClassName: ProjectConstant
  * @Description: TODO
- * @author weiwei
- * @date 2017年8月10日 下午4:07:14
- * 
+ * @author bo bo
+ * @date 2019年8月10日 下午4:07:14
+ *
  */
 public class ProjectConstant {
 

@@ -10,3 +10,7 @@
 *   根据业务在基础代码上进行扩展；
 *   对开发环境配置文件application-dev.properties进行配置，启动项目。
 #### PS：本案例中已有t_user表的案例，若不需要可以删除dao,model,service,web以及resource下的mapper目录!
+
+## 集成了swagger-ui
+
+*  直接运行项目即可

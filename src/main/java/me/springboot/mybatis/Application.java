@@ -2,8 +2,8 @@
  * @Title: Application.java
  * @Package me.springboot.mybatis
  * @Description: TODO
- * @author weiwei
- * @date 2017年8月10日 下午4:00:41
+ * @author bo bo
+ * @date 2019年8月10日 下午4:00:41
  * @version V1.0
  */
 package me.springboot.mybatis;

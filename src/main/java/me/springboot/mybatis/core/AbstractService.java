@@ -1,11 +1,3 @@
-/**     
- * @Title: AbstractService.java   
- * @Package me.springboot.mybatis.core   
- * @Description: TODO
- * @author weiwei 
- * @date 2017年8月10日 下午4:15:15   
- * @version V1.0     
- */
 package me.springboot.mybatis.core;
 
 import java.lang.reflect.Field;
@@ -20,9 +12,9 @@ import tk.mybatis.mapper.entity.Condition;
 /**
  * @ClassName: AbstractService
  * @Description: 基于通用MyBatis Mapper插件的Service接口的实现
- * @author weiwei
- * @date 2017年8月10日 下午4:15:15
- * 
+ * @author bo bo
+ * @date 2019年8月10日 下午4:15:15
+ *
  */
 public abstract class AbstractService<T> implements Service<T> {
 
@@ -73,7 +65,7 @@ public abstract class AbstractService<T> implements Service<T> {
 			throw new ServiceException(e.getMessage(), e);
 		}
 	}
-	
+
 	public List<T> findListBy(String fieldName, Object value)  {
 		try {
 			T model = modelClass.newInstance();

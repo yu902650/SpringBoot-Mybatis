@@ -1,19 +1,11 @@
-/**     
- * @Title: RetCode.java   
- * @Package me.springboot.mybatis.core   
- * @Description: TODO
- * @author weiwei 
- * @date 2017年8月10日 下午4:10:21   
- * @version V1.0     
- */
 package me.springboot.mybatis.core;
 
 /**
  * @ClassName: RetCode
  * @Description: 响应码枚举，参考HTTP状态码的语义
- * @author weiwei
- * @date 2017年8月10日 下午4:10:21
- * 
+ * @author bo bo
+ * @date 2019年8月10日 下午4:10:21
+ *
  */
 public enum RetCode {
 

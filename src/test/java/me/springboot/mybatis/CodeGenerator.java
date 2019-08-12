@@ -1,11 +1,3 @@
-/**
- * @Title: CodeGenerator.java
- * @Package me.springboot.mybatis
- * @Description: TODO
- * @author weiwei
- * @date 2017年8月10日 下午4:22:55
- * @version V1.0
- */
 package me.springboot.mybatis;
 
 import com.google.common.base.CaseFormat;
